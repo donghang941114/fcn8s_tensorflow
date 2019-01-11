@@ -22,7 +22,7 @@ train_ground_truth_dirs = [train_gt]
 val_image_dirs = [val_images]
 val_ground_truth_dirs = [val_gt]
 
-num_classes = 300 # TODO: Set the number of segmentation classes.
+num_classes = 200 # TODO: Set the number of segmentation classes.
 
 train_dataset = BatchGenerator(image_dirs=train_image_dirs,
                                image_file_extension='png',
@@ -105,3 +105,4 @@ cells[1].imshow(example_gt_images[i])
 
 plt.figure(figsize=(16, 8))
 plt.imshow(example_gt_images[i])
+cv2.imwrite("../result_data",example_gt_images[i])
