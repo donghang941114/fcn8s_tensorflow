@@ -23,7 +23,7 @@ train_ground_truth_dirs = [train_gt]
 val_image_dirs = [val_images]
 val_ground_truth_dirs = [val_gt]
 
-num_classes = 20 # TODO: Set the number of segmentation classes.
+num_classes = 200 # TODO: Set the number of segmentation classes.
 
 train_dataset = BatchGenerator(image_dirs=train_image_dirs,
                                image_file_extension='png',
