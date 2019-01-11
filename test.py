@@ -156,3 +156,52 @@ model.train(train_generator=train_generator,
             summaries_dir='tensorboard_log/cityscapes',
             summaries_name='configuration_01',
             training_loss_display_averaging=3)
+
+
+#Save the model
+model.save(model_save_dir='cityscapes_model',
+           saver='saved_model',
+           tags=['default'],
+           name='(batch-size-4)',
+           include_global_step=True,
+           include_last_training_loss=True,
+           include_metrics=True,
+           force_save=False)
+
+#Evaluate the model
+model.evaluate(data_generator=val_generator,
+               metrics={'loss', 'mean_iou', 'accuracy'},
+               num_batches=ceil(num_val_images/batch_size),
+               l2_regularization=0.0,
+               dataset='val')
+
+#Make predictions and visualize them
+images, labels = next(val_generator)
+n = 3 # Select which image of the batch you would like to visualize.
+
+# Make a prediction.
+prediction = model.predict([images[n]], argmax=False)
+
+# Print the predicted segmentation onto the image.
+segmented_image = print_segmentation_onto_image(images[n], prediction, color_map=TRAINIDS_TO_RGBA_DICT)
+
+plt.figure(figsize=(20,14))
+plt.imshow(segmented_image)
+
+
+#Process a sequence of images, save them to disk, and generate a video from them
+model.predict_and_save(results_dir='demo_video_images',
+                       images_dir='../../datasets/Cityscapes_small/leftImg8bit/demoVideo/stuttgart_00',
+                       color_map=TRAINIDS_TO_RGBA_DICT,
+                       resize=False,
+                       image_file_extension='png',
+                       include_unprocessed_image=True,
+                       arrangement='vertical')
+
+create_video_from_images(video_output_name='demo_video',
+                         image_input_dir='demo_video_images',
+                         frame_rate=30.0,
+                         image_file_extension='png')
+
+#Close the session
+model.close()
