@@ -191,7 +191,7 @@ plt.imshow(segmented_image)
 
 #Process a sequence of images, save them to disk, and generate a video from them
 model.predict_and_save(results_dir='demo_video_images',
-                       images_dir='../../datasets/Cityscapes_small/leftImg8bit/demoVideo/stuttgart_00',
+                       images_dir='../datasets/data/leftImg8bit/demoVideo/stuttgart_00',
                        color_map=TRAINIDS_TO_RGBA_DICT,
                        resize=False,
                        image_file_extension='png',
