@@ -103,6 +103,8 @@ i = 0 # Select which sample from the batch to display below.
 figure, cells = plt.subplots(1, 2, figsize=(16,8))
 cells[0].imshow(example_images[i])
 cells[1].imshow(example_gt_images[i])
+cv2.imwrite("../result_data/example_images.jpg",example_images[i])
+
 
 plt.figure(figsize=(16, 8))
 plt.imshow(example_gt_images[i])
