@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import cv2
 
 # TODO: Set the paths to the images.
-train_images = '../datasets/data2/leftImg8bit/train/'#/leftImg8bit/mytrain/
+train_images = '../datasets/data2/leftImg8bit/train/'
 val_images = '../datasets/data2/leftImg8bit/val/'
 test_images = '../datasets/data2/leftImg8bit/test/'
 
