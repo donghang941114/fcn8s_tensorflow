@@ -106,7 +106,7 @@ cells[1].imshow(example_gt_images[i])
 
 plt.figure(figsize=(16, 8))
 plt.imshow(example_gt_images[i])
-cv2.imwrite("../result_data/example_gt_images",example_gt_images[i])
+cv2.imwrite("../result_data/example_gt_images.jpg",example_gt_images[i])
 
 
 #Create the model
