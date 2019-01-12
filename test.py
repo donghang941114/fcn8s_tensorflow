@@ -9,13 +9,13 @@ import matplotlib.pyplot as plt
 import cv2
 
 # TODO: Set the paths to the images.
-train_images = '../datasets/data3'#/leftImg8bit/mytrain/
-val_images = '../datasets/data/leftImg8bit/val/'
-test_images = '../datasets/data/leftImg8bit/test/'
+train_images = '../datasets/data2/leftImg8bit/train/'#/leftImg8bit/mytrain/
+val_images = '../datasets/data2/leftImg8bit/val/'
+test_images = '../datasets/data2/leftImg8bit/test/'
 
 # TODO: Set the paths to the ground truth images.
-train_gt = '../datasets/data/gtFine/train/'
-val_gt = '../datasets/data/gtFine/val/'
+train_gt = '../datasets/data2/gtFine/train/'
+val_gt = '../datasets/data2/gtFine/val/'
 
 # Put the paths to the datasets in lists, because that's what `BatchGenerator` requires as input.
 train_image_dirs = [train_images]
