@@ -1,3 +1,12 @@
+from fcn8s_tensorflow import FCN8s
+from data_generator.batch_generator import BatchGenerator
+from helpers.visualization_utils import print_segmentation_onto_image, create_video_from_images
+from cityscapesscripts.helpers.labels import TRAINIDS_TO_COLORS_DICT, TRAINIDS_TO_RGBA_DICT
+
+from math import ceil
+import time
+import matplotlib.pyplot as plt
+
 model = FCN8s(model_load_dir=None,
               tags=None,
               vgg16_dir='../VGG-16_mod2FCN_ImageNet-Classification',
