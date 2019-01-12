@@ -106,7 +106,7 @@ cells[1].imshow(example_gt_images[i])
 
 plt.figure(figsize=(16, 8))
 plt.imshow(example_gt_images[i])
-#cv2.imwrite("../result_data",example_gt_images[i])
+cv2.imwrite("../result_data",example_gt_images[i])
 
 
 #Create the model
@@ -115,6 +115,7 @@ model = FCN8s(model_load_dir=None,
               vgg16_dir='../VGG-16/VGG-16_mod2FCN_ImageNet-Classification',
               num_classes=num_classes,
               variables_load_dir=None)
+
 
 #Train the model
 epochs = 6  # TODO: Set the number of epochs to train for.
